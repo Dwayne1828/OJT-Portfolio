@@ -17,12 +17,12 @@ export function Header() {
     href: '#home'
   },
   {
-    name: 'Weekly Reports',
-    href: '#reports'
+    name: 'Documents',
+    href: '#projects'
   },
   {
-    name: 'Projects',
-    href: '#projects'
+    name: 'Weekly Reports',
+    href: '#reports'
   }];
 
   const scrollToSection = (href: string) => {

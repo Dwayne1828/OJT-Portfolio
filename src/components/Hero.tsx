@@ -74,7 +74,7 @@ export function Hero() {
                 }
                 className="bg-transparent hover:bg-brand-slate-800 text-white border border-brand-slate-700 px-8 py-4 rounded-md font-medium transition-all duration-200 w-full sm:w-auto justify-center">
                 
-                See Projects
+                See Documents
               </button>
             </div>
           </motion.div>

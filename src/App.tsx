@@ -1,7 +1,7 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { WeeklyReports } from './components/WeeklyReports';
-import { Projects } from './components/Projects';
+import { Documents } from './components/Documents';
 import { Footer } from './components/Footer';
 
 export function App() {
@@ -11,7 +11,7 @@ export function App() {
       <main>
         <Hero />
         <WeeklyReports />
-        <Projects />
+        <Documents />
       </main>
       <Footer />
     </div>
