@@ -95,10 +95,9 @@ export function Hero() {
             }}>
             
             <div className="relative w-80 h-80 xl:w-96 xl:h-96">
-              <div className="absolute inset-0 bg-brand-slate-800 border border-brand-slate-700 overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-0 bg-brand-slate-800 border border-brand-slate-700 overflow-hidden flex items-center justify-center rounded-3xl">
                 <User className="w-32 h-32 text-brand-slate-700" />
-                {/* Replace with actual image if available */}
-                {/* <img src="YOUR_IMAGE_URL" alt="Juan Dela Cruz" className="w-full h-full object-cover" /> */}
+                <img src="public/Image.JPG" alt="Juan Dela Cruz" className="w-full h-full object-cover rounded-3xl" />
               </div>
             </div>
           </motion.div>

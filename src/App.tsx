@@ -1,5 +1,6 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { AboutCompany } from './components/AboutCompany';
 import { WeeklyReports } from './components/WeeklyReports';
 import { Documents } from './components/Documents';
 import { Footer } from './components/Footer';
@@ -10,8 +11,9 @@ export function App() {
       <Header />
       <main>
         <Hero />
-        <WeeklyReports />
+        <AboutCompany />
         <Documents />
+        <WeeklyReports />
       </main>
       <Footer />
     </div>

@@ -17,6 +17,10 @@ export function Header() {
     href: '#home'
   },
   {
+    name: 'HTE',
+    href: '#about'
+  },
+  {
     name: 'Documents',
     href: '#projects'
   },
