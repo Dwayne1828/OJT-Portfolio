@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, GraduationCap, User } from 'lucide-react';
+import { ArrowRight, User } from 'lucide-react';
 export function Hero() {
   return (
     <section
