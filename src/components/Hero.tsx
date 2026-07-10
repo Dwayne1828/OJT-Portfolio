@@ -41,19 +41,6 @@ export function Hero() {
               Incoming 3rd Year Computer Engineering Student at Polytechnic University of the Philippines.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mb-10">
-              <div className="flex items-center text-brand-slate-200 bg-brand-slate-800 border border-brand-slate-700 px-4 py-3 rounded-md w-full sm:w-auto">
-                <Briefcase className="w-5 h-5 text-brand-blue mr-3" />
-                <span className="font-medium">Weekly Report</span>
-              </div>
-              <div className="flex items-center text-brand-slate-200 bg-brand-slate-800 border border-brand-slate-700 px-4 py-3 rounded-md w-full sm:w-auto">
-                <GraduationCap className="w-5 h-5 text-brand-maroon mr-3" />
-                <span className="font-medium">
-                  Polytechnic University of the Philippines
-                </span>
-              </div>
-            </div>
-
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
               <button
                 onClick={() =>
