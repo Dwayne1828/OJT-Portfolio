@@ -7,7 +7,7 @@ export function AboutCompany() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 flex items-center justify-center">
             <img
-              src="public/National_Telecommunications_Commission.svg"
+              src="/National_Telecommunications_Commission.svg"
               alt="Company Logo"
               className="w-12 h-12 mr-3"
             />
