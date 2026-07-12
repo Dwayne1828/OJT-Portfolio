@@ -4,7 +4,6 @@ import {
   Calendar,
   Clock,
   CheckCircle2,
-  BookOpen,
   Image as ImageIcon } from
 'lucide-react';
 import { WEEKLY_REPORTS } from '../data/portfolioData';
@@ -98,30 +97,22 @@ export function WeeklyReports() {
                       <CheckCircle2 className="w-5 h-5 mr-2 text-brand-blue" />
                       Tasks Accomplished
                     </h4>
-                    <ul className="space-y-3">
-                      {currentReport.objectives.map((obj, idx) =>
-                      <li key={idx} className="flex items-start">
-                          <span className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-2 mr-3 flex-shrink-0"></span>
-                          <span className="text-brand-slate-400">{obj}</span>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-
-                  {/* Learnings */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-white flex items-center mb-4">
-                      <BookOpen className="w-5 h-5 mr-2 text-brand-maroon" />
-                      Core Learnings & Skills
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {currentReport.learnings.map((learning, idx) =>
-                      <span
-                        key={idx}
-                        className="px-3 py-1.5 bg-brand-slate-800 text-brand-slate-200 rounded-md text-sm font-medium border border-brand-slate-700">
-                        
-                          {learning}
-                        </span>
+                    <div className="space-y-4">
+                      {currentReport.tasksByDay.map((dayTask, idx) =>
+                      <div key={idx} className="rounded-lg border border-brand-slate-800 bg-brand-slate-900/50 p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <h5 className="text-md font-semibold text-white">{dayTask.day}</h5>
+                            <span className="text-sm text-brand-slate-400">• {dayTask.date}</span>
+                          </div>
+                          <ul className="space-y-2">
+                            {dayTask.bullets.map((bullet, bulletIdx) =>
+                            <li key={bulletIdx} className="flex items-start">
+                                <span className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-2 mr-3 flex-shrink-0"></span>
+                                <span className="text-brand-slate-400">{bullet}</span>
+                              </li>
+                            )}
+                          </ul>
+                        </div>
                       )}
                     </div>
                   </div>
