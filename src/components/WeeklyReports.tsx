@@ -117,7 +117,7 @@ export function WeeklyReports() {
 
   return (
     <section id="reports" className="py-24 bg-brand-slate-900 border-y border-brand-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-2 bg-brand-slate-800/80 px-3.5 py-1.5 rounded-full border border-brand-slate-700 mb-4">
@@ -135,52 +135,52 @@ export function WeeklyReports() {
         </div>
 
         {/* Global Internship Metrics */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-          <div className="bg-brand-slate-950/80 border border-brand-slate-800 p-4 rounded-xl flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue">
-              <Clock className="w-5 h-5" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+          <div className="bg-brand-slate-950/70 border border-brand-slate-800/80 px-3.5 py-2.5 rounded-xl flex items-center space-x-3 shadow-sm">
+            <div className="w-8 h-8 rounded-lg bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue shrink-0">
+              <Clock className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white leading-none mb-1">
-                {totalInternshipHours} hrs
+              <div className="text-base font-semibold text-white leading-tight">
+                {totalInternshipHours} <span className="text-xs font-normal text-brand-slate-400">hrs</span>
               </div>
-              <div className="text-xs text-brand-slate-400">Total Hours Completed</div>
+              <div className="text-[11px] text-brand-slate-400">Total Hours Completed</div>
             </div>
           </div>
 
-          <div className="bg-brand-slate-950/80 border border-brand-slate-800 p-4 rounded-xl flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-              <Briefcase className="w-5 h-5" />
+          <div className="bg-brand-slate-950/70 border border-brand-slate-800/80 px-3.5 py-2.5 rounded-xl flex items-center space-x-3 shadow-sm">
+            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <Briefcase className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white leading-none mb-1">
-                {totalWorkDays} Days
+              <div className="text-base font-semibold text-white leading-tight">
+                {totalWorkDays} <span className="text-xs font-normal text-brand-slate-400">days</span>
               </div>
-              <div className="text-xs text-brand-slate-400">On-Site Duty Days</div>
+              <div className="text-[11px] text-brand-slate-400">On-Site Duty Days</div>
             </div>
           </div>
 
-          <div className="bg-brand-slate-950/80 border border-brand-slate-800 p-4 rounded-xl flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-              <AlertTriangle className="w-5 h-5" />
+          <div className="bg-brand-slate-950/70 border border-brand-slate-800/80 px-3.5 py-2.5 rounded-xl flex items-center space-x-3 shadow-sm">
+            <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+              <AlertTriangle className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-amber-300 leading-none mb-1">
-                {totalSuspensions} Days
+              <div className="text-base font-semibold text-amber-300 leading-tight">
+                {totalSuspensions} <span className="text-xs font-normal text-amber-400/70">days</span>
               </div>
-              <div className="text-xs text-brand-slate-400">Official Suspensions</div>
+              <div className="text-[11px] text-brand-slate-400">Official Suspensions</div>
             </div>
           </div>
 
-          <div className="bg-brand-slate-950/80 border border-brand-slate-800 p-4 rounded-xl flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-              <CalendarIcon className="w-5 h-5" />
+          <div className="bg-brand-slate-950/70 border border-brand-slate-800/80 px-3.5 py-2.5 rounded-xl flex items-center space-x-3 shadow-sm">
+            <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+              <CalendarIcon className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white leading-none mb-1">
-                {WEEKLY_REPORTS.length} Weeks
+              <div className="text-base font-semibold text-white leading-tight">
+                {WEEKLY_REPORTS.length} <span className="text-xs font-normal text-brand-slate-400">weeks</span>
               </div>
-              <div className="text-xs text-brand-slate-400">Documented Period</div>
+              <div className="text-[11px] text-brand-slate-400">Documented Period</div>
             </div>
           </div>
         </div>
@@ -290,13 +290,12 @@ export function WeeklyReports() {
                   return (
                     <div
                       key={day.id}
-                      className={`p-5 sm:p-6 rounded-2xl border transition-all ${
-                        isWork
-                          ? 'bg-brand-slate-900/70 border-brand-slate-800 hover:border-brand-slate-700/80 shadow-md'
-                          : isSuspension
+                      className={`p-5 sm:p-6 rounded-2xl border transition-all ${isWork
+                        ? 'bg-brand-slate-900/70 border-brand-slate-800 hover:border-brand-slate-700/80 shadow-md'
+                        : isSuspension
                           ? 'bg-amber-500/5 border-amber-500/20'
                           : 'bg-brand-slate-900/30 border-brand-slate-800/50'
-                      }`}
+                        }`}
                     >
                       <div className={`grid grid-cols-1 ${hasImages ? 'lg:grid-cols-12 gap-6' : 'gap-4'} items-start`}>
                         {/* LEFT COLUMN: Text Content */}

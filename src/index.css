@@ -7,3 +7,65 @@
 @import 'tailwindcss/utilities';
 
 /* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+/* ==========================================================================
+   Custom Scrollbar System (Theme-Matched to Slate-900 / Brand-Blue)
+   ========================================================================== */
+
+/* Modern standard CSS scrollbar styling (Firefox & modern browsers) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+/* WebKit / Chromium / Edge / Safari custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #334155; /* brand-slate-700 */
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 23, 42, 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #475569; /* brand-slate-600 */
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #3b82f6; /* brand-blue */
+}
+
+/* Document sidebar and dedicated scroll container utility */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(11, 17, 32, 0.4); /* brand-slate-950/40 */
+  border-radius: 9999px;
+  margin: 4px 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #334155; /* brand-slate-700 */
+  border-radius: 9999px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #3b82f6; /* brand-blue accent on hover */
+}
