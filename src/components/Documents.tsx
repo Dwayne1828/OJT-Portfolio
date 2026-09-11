@@ -238,7 +238,7 @@ export function Documents() {
                           onClick={() => setSelectedDoc(doc)}
                           className={`w-full text-left px-3 py-2.5 rounded-lg font-medium transition-all duration-150 flex items-center justify-between text-sm group ${isSelected
                             ? 'bg-brand-blue text-white shadow-md'
-                            : 'text-brand-slate-300 hover:bg-brand-slate-800/80 hover:text-white'
+                            : 'text-white hover:bg-brand-slate-800/80'
                             }`}
                         >
                           <div className="flex items-center min-w-0 mr-2">
@@ -249,11 +249,11 @@ export function Documents() {
                               />
                             ) : (
                               <FileText
-                                className={`w-4 h-4 mr-2.5 flex-shrink-0 ${isSelected ? 'text-white' : 'text-brand-slate-500 group-hover:text-brand-slate-400'
+                                className={`w-4 h-4 mr-2.5 flex-shrink-0 ${isSelected ? 'text-white' : 'text-brand-slate-400 group-hover:text-white'
                                   }`}
                               />
                             )}
-                            <span className="truncate text-xs sm:text-sm" title={doc.name}>
+                            <span className="truncate text-xs sm:text-sm text-white" title={doc.name}>
                               {doc.name}
                             </span>
                           </div>
