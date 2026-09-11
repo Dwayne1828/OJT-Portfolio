@@ -1,4 +1,3 @@
-import { Building } from 'lucide-react';
 
 export function AboutCompany() {
   return (

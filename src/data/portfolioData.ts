@@ -17,6 +17,7 @@ export interface WeeklyReport {
   title: string;
   dateRange: string;
   month: string;
+  monthGroup: string;
   totalHours: number;
   workDaysCount: number;
   suspensionsCount: number;
@@ -32,7 +33,7 @@ export const SCHEDULE_CONFIG = {
   startYear: 2026,
   startMonth: 5, // 0-indexed: 5 = June
   startDay: 29,  // June 29, 2026 (Monday)
-  totalWeeks: 12, // 12 weeks spans June 29 to September 18, 2026
+  totalWeeks: 13, // 13 weeks spans June 29 to September 25, 2026
   workDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], // 4 days a week
   hoursPerDay: 10,
   workDayLabel: 'Work Day (10h)',
@@ -88,7 +89,9 @@ export const CUSTOM_DAY_DATA: Record<
       'Attended weekly team standup meeting and shared daily progress.'
     ],
     deliverables: [
-      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80'
+      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80'
     ]
   },
   '2026-07-02': {
@@ -222,8 +225,6 @@ export function generateWeeklyReports(): WeeklyReport[] {
       });
     }
 
-    const firstDay = days[0];
-    const lastDay = days[days.length - 1];
     const firstDateObj = new Date(SCHEDULE_CONFIG.startYear, SCHEDULE_CONFIG.startMonth, SCHEDULE_CONFIG.startDay + weekIdx * 7);
     const lastDateObj = new Date(SCHEDULE_CONFIG.startYear, SCHEDULE_CONFIG.startMonth, SCHEDULE_CONFIG.startDay + weekIdx * 7 + 4);
 
@@ -243,6 +244,12 @@ export function generateWeeklyReports(): WeeklyReport[] {
         ? `${firstMonth} ${yearNum}`
         : `${firstMonth} - ${lastMonth} ${yearNum}`;
 
+    // July has 5 weeks: Weeks 1-5 (June 29 - July 31)
+    // August has 4 weeks: Weeks 6-9 (August 3 - August 28)
+    // September starts on August 31 with Week 10
+    const monthGroup =
+      weekIdx < 5 ? 'July 2026' : weekIdx < 9 ? 'August 2026' : 'September 2026';
+
     const totalHours = days.reduce((acc, d) => acc + d.hours, 0);
     const workDaysCount = days.filter((d) => d.status === 'work').length;
     const suspensionsCount = days.filter((d) => d.status === 'suspension').length;
@@ -253,6 +260,7 @@ export function generateWeeklyReports(): WeeklyReport[] {
       title: `Week ${weekNumber}`,
       dateRange,
       month: monthLabel,
+      monthGroup,
       totalHours,
       workDaysCount,
       suspensionsCount,
